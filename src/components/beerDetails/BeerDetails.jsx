@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom'
 
 function BeerDetails({ setId}) {
     const [random, setRandom]= useState([]);
-    const [boil, setBoil]= useState([]);
+    // const [boil, setBoil]= useState([]);
     
     const { id } = useParams();
-    let boilVolume;
+    let mash = random.method.mash_temp;
+    let boil=random.boil_volume
+    // console.log(mash)
     
 
     let url= `https://api.punkapi.com/v2/beers?ids=${id}`;
@@ -19,7 +21,7 @@ function BeerDetails({ setId}) {
         .then(res=>
             {
                 setRandom(res[0])
-                setBoil(res[0].boil_volume)
+                // setBoil(res[0].boil_volume)
             })
         .catch(err=>console.log(err))
 
@@ -37,7 +39,8 @@ function BeerDetails({ setId}) {
             <h5>IBU: {random.ibu}</h5>
             <p>{random.description}</p>
             <h4>Recipe</h4>
-            <p>{boil}</p>
+            <p>Boil Volume: {boil.value} {boil.unit}</p>
+            <p>Mash at {mash[0].temp.value} {mash[0].temp.unit} for {mash[0].duration} minutes</p>
         </div>
     );
 }

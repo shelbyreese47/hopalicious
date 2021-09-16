@@ -6,14 +6,17 @@ function RandomBeers({id, setId}) {
     const [click, setClick] = useState([]);
     const [random, setRandom]= useState([]);
     
-    setId(random.id);
+    // setId(random.id);
 
     let url='https://api.punkapi.com/v2/beers/random'
 
     useEffect(()=> {
         fetch(url)
             .then(res=>res.json())
-            .then(res=> setRandom(res[0]))
+            .then(res=> {
+                setRandom(res[0])
+                setId(res[0].id)
+            })
             .catch(err=>console.log(err))
 
 
