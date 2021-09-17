@@ -1,47 +1,58 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Beer from './Beer';
 
 
-function Beers({id, setId}) {
-    const [click, setClick] = useState([]);
-    const [beers, setBeers]= useState([]);
+function Beers({name,ibu,abv,yeast,hops,malt}) {
     
-    // setId(random.id);
+    const [beers, setBeers]= useState([]);
+    const history = useHistory();
 
-    let url='https://api.punkapi.com/v2/beers/random'
-
+    let beerName=name ? `&beer_name=${name}` : ""
+    let ibuUrl = ibu ? `&ibu_gt=${ibu}` : ""
+    let abvUrl = abv ? `&abv_gt=${abv}`: ""
+    let yeastUrl= yeast ? `&yeast=${yeast}` : ""
+    let hopsUrl = hops ? `&hops=${hops}`: ""
+    let maltUrl = malt ? `&malt=${malt}`: ""
+       
+    let url=`https://api.punkapi.com/v2/beers/?${beerName}${ibuUrl}${abvUrl}${yeastUrl}${hopsUrl}${maltUrl}`
+    
     useEffect(()=> {
         fetch(url)
             .then(res=>res.json())
             .then(res=> {
-                setBeers(res)
-                // setId(res[0].id)
+                setBeers(res)                
             })
             .catch(err=>console.log(err))
 
 
-    }, [click])
+    }, [url])
 
     function handleClick(event) {
-        setClick([...click,'']);
+        history.push("/search")
     }
 
     return (
         <div>
+            <h2>Search Results for:</h2>
+            <ul>
+               {name ? <li>name: {name}</li> : ""}
+               {ibu ? <li>ibu: {ibu}</li> : ""}
+                {abv ? <li>abv: {abv}</li> : ""}
+                {yeast ? <li>yeast: {yeast}</li> : ""}
+                {hops ? <li>hops: {hops}</li>: ""}
+                {malt ? <li>malt: {malt}</li>: ""}
+            </ul>
             <div>
                 {beers.map((beer)=>
-                <Beer beer={beer}/>
+                <Beer key={beer.id} id = {beer.id} beer={beer}/>
                 )}
             </div>
             <div>
-                <button onClick={handleClick}>Random Beer</button>
+                <button onClick={handleClick}>Back</button>
                 
             </div>
-            <main>
-                
-                 
-            </main>
+
         </div>
     );
 }

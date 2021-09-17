@@ -9,7 +9,7 @@ function BeerDetails({ setId}) {
     
 
     let url= `https://api.punkapi.com/v2/beers?ids=${id}`;
-    
+    console.log(url)
     useEffect(()=>{
         setId(id);
         
@@ -22,7 +22,7 @@ function BeerDetails({ setId}) {
             })
         .catch(err=>console.log(err))
 
-    },[])
+    },[url])
 
     function handleSubmit() {
         history.push("/random")
@@ -31,7 +31,7 @@ function BeerDetails({ setId}) {
     if(!beer){
         return <h2>Brewing...</h2>;
     } else {
-    console.log("this is my beer array",beer);
+    
     let malt = beer.ingredients.malt;
     let hops = beer.ingredients.hops;
     let yeast = beer.ingredients.yeast;
@@ -81,6 +81,7 @@ function BeerDetails({ setId}) {
                 <li>{food}</li>
                 )}
             </ul>
+
             <button onClick={handleSubmit}>Another Random Beer</button>
         </div>
     );

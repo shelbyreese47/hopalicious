@@ -11,7 +11,7 @@ function Beer({beer, id}) {
                 <h5>ABV: {beer.abv}</h5>
                 <p>{beer.description}</p>
               
-                <Link to={"/random/" + id}>Full Recipe</Link>
+                <Link to={"/search/beers/" + id}>Full Recipe</Link>
         </div>
     );
 }
