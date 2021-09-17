@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 function BeerDetails({ setId}) {
-    const [random, setRandom]= useState([]);
-    // const [boil, setBoil]= useState([]);
-    
+    const [beer, setBeer]= useState(null);
     const { id } = useParams();
-    let mash = random.method.mash_temp;
-    let boil=random.boil_volume
-    let fermentation = random.method.fermentation;
-    let malt = random.ingredients.malt;
-    let hops = random.ingredients.hops;
-    let yeast = random.ingredients.yeast;
-    let foodPairing = random.food_pairing;
-    // console.log(mash)
+    const history = useHistory();
+    
     
 
     let url= `https://api.punkapi.com/v2/beers?ids=${id}`;
@@ -25,24 +17,36 @@ function BeerDetails({ setId}) {
         .then(res=>res.json())
         .then(res=>
             {
-                setRandom(res[0])
-                // setBoil(res[0].boil_volume)
+                setBeer(res[0])
+                
             })
         .catch(err=>console.log(err))
 
-        console.log(random);
-
-        // boilVolume=random[boil_volume]
-
     },[])
 
+    function handleSubmit() {
+        history.push("/random")
+    }
+    
+    if(!beer){
+        return <h2>Brewing...</h2>;
+    } else {
+    console.log("this is my beer array",beer);
+    let malt = beer.ingredients.malt;
+    let hops = beer.ingredients.hops;
+    let yeast = beer.ingredients.yeast;
+    let mash = beer.method.mash_temp;
+    let boil=beer.boil_volume;
+    let fermentation = beer.method.fermentation;
+    let foodPairing = beer.food_pairing;
+    
     return (
         <div>
-            <h2>{random.name}</h2>
-            <h4>{random.tagline}</h4>
-            <h5>ABV: {random.abv}</h5>
-            <h5>IBU: {random.ibu}</h5>
-            <p>{random.description}</p>
+            <h2>{beer.name}</h2>
+            <h4>{beer.tagline}</h4>
+            <h5>ABV: {beer.abv}</h5>
+            <h5>IBU: {beer.ibu}</h5>
+            <p>{beer.description}</p>
             <h4>Recipe</h4>
             <h5>Ingredients</h5>
             <p>Malt</p>
@@ -64,20 +68,22 @@ function BeerDetails({ setId}) {
             <h5>Directions:</h5>
             <ul>
                 <li>Boil Volume: {boil.value} {boil.unit}</li>
-                <li>Mash at {mash[0].temp.value} {mash[0].temp.unit} for {mash[0].duration} minutes</li>
+                {mash.map((mash)=>
+                <li>Mash at {mash.temp.value} {mash.temp.unit} for {mash.duration} minutes</li>
+                )}
                 <li>Ferment at {fermentation.temp.value} {fermentation.temp.unit}</li>
             </ul>
             <p>Brewer's tips:</p>
-                <p>{random.brewers_tips}</p>
+                <p>{beer.brewers_tips}</p>
             <p>Food Pairing:</p>
             <ul>
                 {foodPairing.map((food)=>
                 <li>{food}</li>
                 )}
             </ul>
-            
+            <button onClick={handleSubmit}>Another Random Beer</button>
         </div>
     );
-}
+}}
 
 export default BeerDetails;
