@@ -26,7 +26,9 @@ function BeerDetails({ setId}) {
     },[url])
 
     function handleSubmit() {
-        history.push("/random")
+        // history.push("/random")
+        history.goBack();
+        console.log(history.goBack())
     }
     
     if(!beer){
@@ -87,7 +89,7 @@ function BeerDetails({ setId}) {
                 )}
             </ul>
 
-            <button className="anotherRandomButton" onClick={handleSubmit}>Random Beer</button>
+            <button className="anotherRandomButton" onClick={handleSubmit}>Go Back</button>
         </div>
     );
 }}
