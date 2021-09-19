@@ -1,3 +1,39 @@
+.searchResultsContainer {
+	overflow-y:scroll;
+	height: 90vh;
+	/* border: 2px solid red; */
+}
+.searchItems {
+	border-bottom: 5px ridge rgba(128, 128, 0,0.5);
+	display: flex;
+	list-style: none;
+	flex-direction: row;
+	padding: 0px 20px;
+	margin: 10px;
+}
+.searchItem {
+	margin: 10px;
+	font-weight: bold;
+
+}
+
+.searchResultsContainer::-webkit-scrollbar {
+	width: 5px;
+}
+/* Track */
+.searchResultsContainer::-webkit-scrollbar-track {
+  background: rgb(128, 128, 0.6); 
+}
+ 
+/* Handle */
+.searchResultsContainer::-webkit-scrollbar-thumb {
+  background: rgba(215, 185, 127, 0.7); 
+}
+
+/* Handle on hover */
+.searchResultsContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(215, 185, 127, 0.7); 
+}
 .searchForm {
   align-items: center;
     justify-content: center;

@@ -33,15 +33,15 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
     }
 
     return (
-        <div>
+        <div className="searchResultsContainer">
             <h2>Search Results for:</h2>
-            <ul>
-               {name ? <li>name: {name}</li> : ""}
-               {ibu ? <li>ibu: {ibu}</li> : ""}
-                {abv ? <li>abv: {abv}</li> : ""}
-                {yeast ? <li>yeast: {yeast}</li> : ""}
-                {hops ? <li>hops: {hops}</li>: ""}
-                {malt ? <li>malt: {malt}</li>: ""}
+            <ul className="searchItems">
+               {name ? <li className="searchItem">name: {name}</li> : ""}
+               {ibu ? <li className="searchItem">ibu: {ibu}</li> : ""}
+                {abv ? <li className="searchItem">abv: {abv}</li> : ""}
+                {yeast ? <li className="searchItem">yeast: {yeast}</li> : ""}
+                {hops ? <li className="searchItem">hops: {hops}</li>: ""}
+                {malt ? <li className="searchItem">malt: {malt}</li>: ""}
             </ul>
             <div>
                 {beers.map((beer)=>
@@ -49,7 +49,7 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
                 )}
             </div>
             <div>
-                <button onClick={handleClick}>Back</button>
+                <button className="anotherRandomButton" onClick={handleClick}>Back to Search</button>
                 
             </div>
 

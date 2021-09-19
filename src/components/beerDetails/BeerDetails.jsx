@@ -87,7 +87,7 @@ function BeerDetails({ setId}) {
                 )}
             </ul>
 
-            <button className="anotherRandomButton" onClick={handleSubmit}>Another Random Beer</button>
+            <button className="anotherRandomButton" onClick={handleSubmit}>Random Beer</button>
         </div>
     );
 }}
