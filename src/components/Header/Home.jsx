@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 
 function Home(props) {
     return (
-        <div>
-           <h3>Welcome to hopalicious!</h3> 
-           <h4>What would you like to do?</h4>
+        <div className="home">
+            <div className="hops">
+                <img className="hopsImg" src="https://i.imgur.com/FTCHa5u.png" alt="hops"/>
+                <h3 className="welcome">Welcome to hopalicious</h3> 
+                <img className="hopsImg"  src="https://i.imgur.com/FTCHa5u.png" alt="hops"/>
+            </div>
+           <h4 className="welcomeMessage">Let's get to brewing!</h4>
             <Link to="/search">
-           <button>Search for a Beer Recipe</button>
+           <button className="recipeButton">Search for a Beer Recipe</button>
            </Link>
            <Link to="/random">
-            <button>Get a Random Beer Recipe</button>
+            <button className="randomButton">Get a Random Beer Recipe</button>
            </Link>
            
         </div>

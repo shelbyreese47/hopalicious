@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom'
 
+
 function BeerDetails({ setId}) {
     const [beer, setBeer]= useState(null);
     const { id } = useParams();
@@ -41,9 +42,9 @@ function BeerDetails({ setId}) {
     let foodPairing = beer.food_pairing;
     
     return (
-        <div>
-            <h2>{beer.name}</h2>
-            <h4>{beer.tagline}</h4>
+        <div className="recipe">
+            <h2 className="beerName">{beer.name}</h2>
+            <h4 className="tagline">{beer.tagline}</h4>
             <h5>ABV: {beer.abv}</h5>
             <h5>IBU: {beer.ibu}</h5>
             <p>{beer.description}</p>

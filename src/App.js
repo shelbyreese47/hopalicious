@@ -1,4 +1,6 @@
 import './App.css';
+import './components/Header/Header.css'
+import './components/beerDetails/BeerDetailsCss.css'
 import { Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './components/Header/Home';
@@ -24,10 +26,21 @@ function App() {
 		<div className='App'>
 			<header className='App-header'>
 				<Link to='/'>
-					<h1>hopalicious</h1>
+					<div className='logo'>
+						<img
+							className='logoImg'
+							src='https://i.imgur.com/t92odqy.png'
+							alt='hops'
+						/>
+						{/* </div>
+					<div className='business'> */}
+						<h1 className="business">hopalicious</h1>
+					</div>
 				</Link>
 				<Link to='/search'>
-					<h3>search</h3>
+					<div className='search'>
+						<h3>search</h3>
+					</div>
 				</Link>
 			</header>
 			<main>
@@ -62,12 +75,12 @@ function App() {
 							setUrl={setUrl}
 							formstate={formstate}
 							setFormstate={setFormstate}
-              initialState={initialState}
+							initialState={initialState}
 						/>
 					)}
 				/>
 				<Route
-          exact
+					exact
 					path='/search/beers'
 					render={() => (
 						<Beers
@@ -105,3 +118,6 @@ function App() {
 }
 
 export default App;
+
+
+//Copyright: <a href='https://www.123rf.com/profile_9dreamstudio'>9dreamstudio</a>

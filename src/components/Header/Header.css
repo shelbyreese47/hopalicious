@@ -1,0 +1,99 @@
+.App-header {
+	background-color: rgba(215, 185, 127, 0.6);
+	border-bottom: 10px solid rgba(215, 185, 127, 0.8);
+	display: grid;
+	grid-template-columns: 5fr 1fr;
+	grid-template-rows: 100%;
+	align-items: flex-end;
+    /* position: absolute; */
+    position: sticky;
+    top:0;
+}
+.App {
+	height: 100vh;
+}
+body {
+	background-image: url('https://i.imgur.com/yrJxm7O.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-attachment: fixed;
+}
+.logoImg {
+	width: 150px;
+}
+.logo {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 1;
+	display: flex;
+}
+.business {
+	margin-top: 40px;
+    color: rgb(128, 128, 0);
+
+}
+.search {
+	grid-column: 2 / span 1;
+	grid-row: 1 / span 1;
+	text-align: right;
+    color: rgb(160, 82, 45);
+    margin-right: 20px;
+}
+a {
+  text-decoration: none; 
+  
+}
+a:hover{
+cursor: pointer;
+
+}
+
+.home {
+    width: 700px;
+	border: 5px solid rgb(128, 128, 0);
+    margin: 50px auto;
+    padding: 10px;
+    background-color: rgba(215, 185, 127, 0.7);
+    text-align: center;
+}
+.welcome {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+.welcomeMessage {
+    font-size: 32px;
+    margin-top: 0px;
+}
+.hops {
+    display:flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+}
+.hopsImg {
+    width: 100px;
+    /* height: 50px; */
+}
+
+.recipeButton, .randomButton{
+    background-color: rgb(128, 128, 0) ;
+    padding: 10px 20px;
+    border: none;
+    margin-bottom: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.randomButton:hover , .recipeButton:hover{
+    opacity: 0.75;
+}
+.randomButton{
+    margin-left: 10px;
+}
+
+@media (max-width:700px){
+.home{
+    width: 80vw;
+}
+
+
+}
