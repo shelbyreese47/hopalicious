@@ -5,10 +5,13 @@
 } */
 .recipe {
 	width: 80vw;
+	height: 75vh;
 	border: 5px solid rgb(128, 128, 0);
     margin: 50px auto;
+
     padding: 10px;
-    background-color: rgba(215, 185, 127, 0.7);
+    background-color: rgba(215, 185, 127, 0.85);
+	overflow-y:scroll;
 }
 .beerName {
 	margin: 20px 0px 0px 0px;
@@ -17,7 +20,104 @@
 	margin-top: 5px;
 }
 
-@media (min-width:1400px){
+.anotherRandomButton {
+	padding: 5px 20px;
+	margin-right: 5px;
+	margin-left: auto;
+	display: block;
+	background-color: rgb(128, 128, 0);
+	margin-bottom: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border: 2px solid rgba(215, 185, 127, 1);
+}
+h2 {
+	font-size: 28px;
+	color: rgb(128, 128, 0);
+}
+h4 {
+	font-size: 24px;
+	
+}
+h5{
+	font-size: 20px;
+}
+
+.anotherRandomButton:hover {
+	opacity: 0.75;
+
+}
+
+.recipe::-webkit-scrollbar {
+	width: 5px;
+}
+/* Track */
+.recipe::-webkit-scrollbar-track {
+  background: rgb(128, 128, 0.6); 
+}
+ 
+/* Handle */
+.recipe::-webkit-scrollbar-thumb {
+  background: rgba(215, 185, 127, 0.7); 
+}
+
+/* Handle on hover */
+.recipe::-webkit-scrollbar-thumb:hover {
+  background: rgba(215, 185, 127, 0.7); 
+}
+.titleBD {
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+	align-items: baseline;
+}
+.beerName{
+	grid-row: 1;
+	grid-column: 1;
+}
+.abvBD {
+	grid-row: 1;
+	grid-column: 2;
+	text-align: right;
+	margin-bottom: 0px;
+}
+.tagline {
+	grid-row:2;
+	grid-column:1;
+
+}
+.ibuBD {
+	grid-row:2;
+	grid-column: 2;
+	text-align: right;
+	margin-top: 0px;
+	
+}
+.beerDescription {
+	border-bottom: 2px solid rgb(128, 128, 0);
+	border-top: 2px solid rgb(128, 128, 0);
+	padding: 50px 10px;
+	text-align: center;
+	text-decoration:brown;
+
+
+}
+.ingredients {
+	border-left: 5px groove rgba(128, 128, 0, 0.5);
+	margin-left: 10px;
+	margin-top: 0px;
+	padding: 5px 10px;
+}
+.recipeTitle {
+	margin-bottom: 0px;
+
+}
+
+.ing {
+	margin-top: 10px;
+}
+
+
+@media (min-width:1100px){
 	.recipe {
 	width: 900px;
 	}

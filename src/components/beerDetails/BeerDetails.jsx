@@ -43,30 +43,34 @@ function BeerDetails({ setId}) {
     
     return (
         <div className="recipe">
-            <h2 className="beerName">{beer.name}</h2>
-            <h4 className="tagline">{beer.tagline}</h4>
-            <h5>ABV: {beer.abv}</h5>
-            <h5>IBU: {beer.ibu}</h5>
-            <p>{beer.description}</p>
-            <h4>Recipe</h4>
-            <h5>Ingredients</h5>
-            <p>Malt</p>
-            <ul> 
-                {malt.map((malt)=> 
-                <li>{malt.amount.value} {malt.amount.unit} {malt.name}</li>
-                )}              
-            </ul>
-            <p>Hops</p>
-            <ul> 
-                {hops.map((hops)=> 
-                <li>{hops.amount.value} {hops.amount.unit} {hops.name} to be added at {hops.add} to add {hops.attribute}</li>
-                )}              
-            </ul>
-            <p>Yeast</p>
-            <ul>
-                <li>{yeast}</li>
-            </ul>
-            <h5>Directions:</h5>
+            <div className="titleBD">
+                <h2 className="beerName">{beer.name}</h2>
+                <h5 className="abvBD">ABV: {beer.abv}</h5>
+                <h4 className="tagline">{beer.tagline}</h4>
+                <h5 className="ibuBD">IBU: {beer.ibu}</h5>
+            </div>
+            <p className="beerDescription"><em>{beer.description}</em></p>
+            <h4 className="recipeTitle">Recipe</h4>
+            <h5 className="ing"><em>Ingredients</em></h5>
+            <div className="ingredients">
+                <p><strong>Malt</strong></p>
+                <ul> 
+                    {malt.map((malt)=> 
+                    <li>{malt.amount.value} {malt.amount.unit} {malt.name}</li>
+                    )}              
+                </ul>
+                <p><strong>Hops</strong></p>
+                <ul> 
+                    {hops.map((hops)=> 
+                    <li>{hops.amount.value} {hops.amount.unit} {hops.name} to be added at {hops.add} to add {hops.attribute}</li>
+                    )}              
+                </ul>
+                <p><strong>Yeast</strong></p>
+                <ul>
+                    <li>{yeast}</li>
+                </ul>
+            </div>
+            <h5><em>Directions</em></h5>
             <ul>
                 <li>Boil Volume: {boil.value} {boil.unit}</li>
                 {mash.map((mash)=>
@@ -74,16 +78,16 @@ function BeerDetails({ setId}) {
                 )}
                 <li>Ferment at {fermentation.temp.value} {fermentation.temp.unit}</li>
             </ul>
-            <p>Brewer's tips:</p>
+            <h5><em>Brewer's tips</em></h5>
                 <p>{beer.brewers_tips}</p>
-            <p>Food Pairing:</p>
+            <h5><em>Food Pairing</em></h5>
             <ul>
                 {foodPairing.map((food)=>
                 <li>{food}</li>
                 )}
             </ul>
 
-            <button onClick={handleSubmit}>Another Random Beer</button>
+            <button className="anotherRandomButton" onClick={handleSubmit}>Another Random Beer</button>
         </div>
     );
 }}

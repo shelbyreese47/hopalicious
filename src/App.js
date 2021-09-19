@@ -1,6 +1,8 @@
 import './App.css';
 import './components/Header/Header.css'
 import './components/beerDetails/BeerDetailsCss.css'
+import './components/RandomBeer/RandomBeer.css'
+import './components/BeerSearch/BeerSearch.css'
 import { Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './components/Header/Home';
@@ -8,6 +10,7 @@ import RandomBeers from './components/RandomBeer/RandomBeers';
 import BeerSearch from './components/BeerSearch/BeerSearch';
 import BeerDetails from './components/beerDetails/BeerDetails.jsx';
 import Beers from './components/BeerSearch/Beers';
+import OfAge from './components/Header/OfAge';
 
 function App() {
 	const [id, setId] = useState();
@@ -25,7 +28,7 @@ function App() {
 	return (
 		<div className='App'>
 			<header className='App-header'>
-				<Link to='/'>
+				<Link to='/home'>
 					<div className='logo'>
 						<img
 							className='logoImg'
@@ -34,17 +37,21 @@ function App() {
 						/>
 						{/* </div>
 					<div className='business'> */}
-						<h1 className="business">hopalicious</h1>
+						<h1 className='business'>hopalicious</h1>
 					</div>
 				</Link>
-				<Link to='/search'>
-					<div className='search'>
-						<h3>search</h3>
-					</div>
-				</Link>
+				{/* <nav> */}
+					<Link to='/search'>
+						<h3 className='search'>search</h3>
+					</Link>
+					<Link to='/random'>
+						<h3 className="randomNav">random</h3>
+					</Link>
+				{/* </nav> */}
 			</header>
 			<main>
-				<Route exact path='/' component={Home} />
+				<Route exact path="/" component={OfAge}/>
+				<Route exact path='/home' component={Home} />
 				<Route
 					exact
 					path='/random'

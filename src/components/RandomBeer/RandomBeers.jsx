@@ -32,17 +32,19 @@ function RandomBeers({id, setId}) {
     
     // }
     return (
-        <div>
-            <div>
-                <h2>{random.name}</h2>
-                <h4>{random.tagline}</h4>
-                <h5>ABV: {random.abv}</h5>
-                <p>{random.description}</p>
-                {/* <Link to={"/" + id}>Full Recipe</Link> */}
-                <Link to={"/random/" + id}>Full Recipe</Link>
+        <div className="randomBeer">
+            <div >
+             <div className="titleBD">
+                <h2 className="beerName">{random.name}</h2>
+                <h5 className="abvBD">ABV: {random.abv}</h5>
+                <h4 className="tagline">{random.tagline}</h4>
+                <h5 className="ibuBD">IBU: {random.ibu}</h5>
+            </div>
+                <p className="beerDescription">{random.description}</p>
+                <Link className="fullRecipe" to={"/random/" + id}><strong>Full Recipe</strong></Link>
             </div>
             <div>
-                <button onClick={handleClick}>Random Beer</button>
+                <button className="anotherRandomButton" onClick={handleClick}>Another Random Beer</button>
                 
             </div>
             <main>

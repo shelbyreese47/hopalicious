@@ -1,0 +1,77 @@
+.searchForm {
+  align-items: center;
+    justify-content: center;
+	width: 60vw;
+	/* height: 100%; */
+	border: 5px solid rgb(128, 128, 0);
+	margin: 50px auto;
+	padding: 20px 20px;
+	background-color: rgba(215, 185, 127, 0.85);
+}
+.searchFields {
+  
+	display: grid;
+	grid-template-columns: 150px 300px;
+	grid-template-rows: auto;
+    gap: 10px;
+    text-align: right;
+    font-size: 20px;
+}
+.c11 {
+	grid-column: 1;
+	grid-row: 1;
+}
+.c21 {
+	grid-column: 2;
+	grid-row: 1;
+}
+.c12 {
+	grid-column: 1;
+	grid-row: 2;
+}
+.c22 {
+	grid-column: 2;
+	grid-row: 2;
+}
+.c13 {
+	grid-column: 1;
+	grid-row: 3;
+}
+.c23 {
+	grid-column: 2;
+	grid-row: 3;
+}
+.c14 {
+	grid-column: 1;
+	grid-row: 4;
+}
+.c24 {
+	grid-column: 2;
+	grid-row: 4;
+}
+.c15 {
+	grid-column: 1;
+	grid-row: 5;
+}
+.c25 {
+	grid-column: 2;
+	grid-row: 5;
+}
+.c16 {
+	grid-column: 1;
+	grid-row: 6;
+}
+.c26 {
+	grid-column: 2;
+	grid-row: 6;
+}
+.searchButton {
+    padding: 5px 20px;
+    margin: 10px 5px 10px auto;
+	display: block;
+	background-color: rgb(128, 128, 0);
+	margin-bottom: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border: 2px solid rgba(215, 185, 127, 1);
+}

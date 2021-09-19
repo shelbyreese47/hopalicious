@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-function Home(props) {
+function OfAge(props) {
     return (
         <div className="home">
             <div className="hops">
@@ -9,16 +9,16 @@ function Home(props) {
                 <h3 className="welcome">Welcome to hopalicious</h3> 
                 <img className="hopsImg"  src="https://i.imgur.com/FTCHa5u.png" alt="hops"/>
             </div>
-           <h4 className="welcomeMessage">Let's get brewing!</h4>
-            <Link to="/search">
-           <button className="recipeButton">Search for a Beer Recipe</button>
+           <h4 className="welcomeMessage">First, confirm your age:</h4>
+            <Link to="/home">
+           <button className="recipeButton">I am 21+</button>
            </Link>
-           <Link to="/random">
-            <button className="randomButton">Get a Random Beer Recipe</button>
+           <Link to="/nope">
+            <button className="randomButton">I am under 21</button>
            </Link>
            
         </div>
     );
 }
 
-export default Home;
+export default OfAge;
