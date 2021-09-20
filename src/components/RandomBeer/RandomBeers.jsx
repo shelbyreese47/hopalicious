@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Route } from 'react-router-dom';
-import RandomBeer from './RandomBeer'
+import { Link } from 'react-router-dom';
+
 
 function RandomBeers({id, setId}) {
     const [click, setClick] = useState([]);
     const [random, setRandom]= useState([]);
     
-    // setId(random.id);
-
     let url='https://api.punkapi.com/v2/beers/random'
 
     useEffect(()=> {
@@ -25,12 +23,7 @@ function RandomBeers({id, setId}) {
     function handleClick(event) {
         setClick([...click,'']);
     }
-    // function handleFullButton(event){
-    // beerId= random.id  
-    // console.log('This is the beer ID',beerId)  
-    // setId(beerId);
-    
-    // }
+ 
     return (
         <div className="randomBeer">
             <div >
@@ -47,10 +40,7 @@ function RandomBeers({id, setId}) {
                 <button className="anotherRandomButton" onClick={handleClick}>Another Random Beer</button>
                 
             </div>
-            <main>
-                
-                 
-            </main>
+
         </div>
     );
 }

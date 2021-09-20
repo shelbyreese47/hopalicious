@@ -112,3 +112,56 @@
 	cursor: pointer;
 	border: 2px solid rgba(215, 185, 127, 1);
 }
+.hoverMess{
+	position: inline;
+
+}
+.hoverMessage {
+	display: none;
+  position: absolute;
+  width: 350px;
+  font-size:14px;
+  /* bottom: 5%;
+  left: 5%;
+  right: 5%; */
+  background-color: #fff;
+  border:2px solid rgb(128, 128, 0);
+  /* padding: .5em; */
+  text-align: left;
+  line-height: 200%;
+  padding-left: 15px;
+
+}
+.hoverTitle {
+	border-bottom: 3px solid rgb(128, 128, 0);
+	font-size: 16px;
+}
+ul {
+	margin-left: 0px;
+	padding-left: 0px;
+	padding-right: 15px;
+
+	
+} 
+li {
+	list-style-type:none;
+	border-bottom: 1px solid rgba(128, 128, 0, .3)
+
+}
+.hoverMess:hover .hoverMessage {
+	display:block;
+}
+.infoButton {
+	border-radius: 50%;
+	font-size: 12px;
+	/* width: 10px;
+	height: 15px; */
+	/* text-align: center; */
+	padding:1px 3px;
+	background-color: darkgrey;
+	border: none;
+	color: white;
+	margin-left: 10px;
+
+
+}

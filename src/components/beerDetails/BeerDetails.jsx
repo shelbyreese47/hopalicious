@@ -12,12 +12,12 @@ function BeerDetails({ setId}) {
     let url= `https://api.punkapi.com/v2/beers?ids=${id}`;
     console.log(url)
     useEffect(()=>{
-        setId(id);
+        // setId(id);
         
         fetch(url)
         .then(res=>res.json())
         .then(res=>
-            {
+            {   setId(id);
                 setBeer(res[0])
                 
             })
@@ -32,7 +32,7 @@ function BeerDetails({ setId}) {
     }
     
     if(!beer){
-        return <h2>Brewing...</h2>;
+        return <h2 className="brewingMessage">Brewing...</h2>;
     } else {
     
     let malt = beer.ingredients.malt;

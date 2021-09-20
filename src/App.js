@@ -14,7 +14,7 @@ import OfAge from './components/Header/OfAge';
 
 function App() {
 	const [id, setId] = useState();
-	const [url, setUrl] = useState();
+	// const [url, setUrl] = useState();
 	const initialState = {
 		name: '',
 		ibu: '',
@@ -55,7 +55,11 @@ function App() {
 				<Route
 					exact
 					path='/random'
-					render={() => <RandomBeers id={id} setId={setId} />}
+					render={() => 
+					<RandomBeers 
+						id={id} 
+						setId={setId}
+					/>}
 				/>
 
 				<Route
@@ -65,8 +69,8 @@ function App() {
 							key={id}
 							id={id}
 							setId={setId}
-							url={url}
-							setUrl={setUrl}
+							// url={url}
+							// setUrl={setUrl}
 						/>
 					)}
 				/>
@@ -78,8 +82,8 @@ function App() {
 							key={id}
 							id={id}
 							setId={setId}
-							url={url}
-							setUrl={setUrl}
+							// url={url}
+							// setUrl={setUrl}
 							formstate={formstate}
 							setFormstate={setFormstate}
 							initialState={initialState}
@@ -94,8 +98,8 @@ function App() {
 							key={id}
 							id={id}
 							setId={setId}
-							url={url}
-							setUrl={setUrl}
+							// url={url}
+							// setUrl={setUrl}
 							formstate={formstate}
 							setFormstate={setFormstate}
 							name={formstate.name}
@@ -114,8 +118,8 @@ function App() {
 							key={id}
 							id={id}
 							setId={setId}
-							url={url}
-							setUrl={setUrl}
+							// url={url}
+							// setUrl={setUrl}
 						/>
 					)}
 				/>

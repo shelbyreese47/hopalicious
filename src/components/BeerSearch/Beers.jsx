@@ -8,14 +8,17 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
     const [beers, setBeers]= useState([]);
     const history = useHistory();
 
+
     let beerName=name ? `&beer_name=${name}` : ""
     let ibuUrl = ibu ? `&ibu_gt=${ibu}` : ""
+    let max= parseInt(ibu) +9;
+    let ibuMax = ibu ? `&ibu_lt=${max}` : ""
     let abvUrl = abv ? `&abv_gt=${abv}`: ""
     let yeastUrl= yeast ? `&yeast=${yeast}` : ""
     let hopsUrl = hops ? `&hops=${hops}`: ""
     let maltUrl = malt ? `&malt=${malt}`: ""
        
-    let url=`https://api.punkapi.com/v2/beers/?${beerName}${ibuUrl}${abvUrl}${yeastUrl}${hopsUrl}${maltUrl}`
+    let url=`https://api.punkapi.com/v2/beers/?${beerName}${ibuUrl}${ibuMax}${abvUrl}${yeastUrl}${hopsUrl}${maltUrl}`
     
     useEffect(()=> {
         fetch(url)
@@ -27,7 +30,7 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
 
 
     }, [url])
-
+    console.log(url);
     function handleClick(event) {
         history.push("/search")
     }
@@ -37,7 +40,7 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
             <h2>Search Results for:</h2>
             <ul className="searchItems">
                {name ? <li className="searchItem">name: {name}</li> : ""}
-               {ibu ? <li className="searchItem">ibu: {ibu}</li> : ""}
+               {ibu ? <li className="searchItem">ibu: {ibu}- {max}</li> : ""}
                 {abv ? <li className="searchItem">abv: {abv}</li> : ""}
                 {yeast ? <li className="searchItem">yeast: {yeast}</li> : ""}
                 {hops ? <li className="searchItem">hops: {hops}</li>: ""}
