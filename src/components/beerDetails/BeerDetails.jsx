@@ -28,7 +28,7 @@ function BeerDetails({ setId}) {
     function handleSubmit() {
         // history.push("/random")
         history.goBack();
-        console.log(history.goBack())
+    
     }
     
     if(!beer){

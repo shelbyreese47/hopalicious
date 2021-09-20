@@ -5,6 +5,24 @@ Are you a home brewer? Do you have trouble coming up with new recipes or scourin
 > API link
 https://api.punkapi.com/v2/beers 
 
+## Technologies Used
+- JavaScript
+- React
+- imgur.com
+
+## Installation instructions
+- fork and clone the repo
+- cd into the repo
+- Open the entire folder in VScode
+- Open the index.html file in your browser
+- Start playing!
+
+## Contribution Guidelines
+**How to contribute**
+
+**How to identify bugs**
+
+**How to propose improvements**
 
 ## Wire Frames
 > Copy and paste or drag and drop your images here.
@@ -14,8 +32,6 @@ https://api.punkapi.com/v2/beers
 
 
 ## User Stories
-> Add user stories following the _As a [type of user], I want [what the user wants], so that [what it helps accomplish]_ format.
-
 ### MVP Goals
 -As a user, I want to be able to see a random beer recipe if I don't know what I want to search for
 -As a user, I want to be able to search for the different components of the beer I would like to brew so I can brew according to what I have on hand/what I'm going for (type of yeast, hops, IBUs etc)
