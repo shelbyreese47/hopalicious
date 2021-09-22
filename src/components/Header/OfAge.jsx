@@ -13,7 +13,7 @@ function OfAge(props) {
             <Link to="/home">
            <button className="recipeButton">I am 21+</button>
            </Link>
-           <Link to="/nope">
+           <Link to="/error">
             <button className="randomButton">I am under 21</button>
            </Link>
            

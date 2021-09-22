@@ -33,15 +33,15 @@ https://api.punkapi.com/v2/beers
 
 ## User Stories
 ### MVP Goals
--As a user, I want to be able to see a random beer recipe if I don't know what I want to search for
--As a user, I want to be able to search for the different components of the beer I would like to brew so I can brew according to what I have on hand/what I'm going for (type of yeast, hops, IBUs etc)
--As a user, I want to easily navigate through the website so that I don't get confused about where to go
+- As a user, I want to be able to see a random beer recipe if I don't know what I want to search for
+- As a user, I want to be able to search for the different components of the beer I would like to brew so I can brew according to what I have on hand/what I'm going for (type of yeast, hops, IBUs etc)
+- As a user, I want to easily navigate through the website so that I don't get confused about where to go
 
 
 ### Stretch Goals
--As a user, I would like to shuffle through random recipes so I can get inspiration for what to brew
--As a user, I would like to see animations when a button or recipe is clicked on so I know it's accepting my input
--As a user, I would like drop down menus for the search items so I know what options I have
--As a user, I would like to be able to open the recipe on my phone (and have it look great) so I can more easily access it while I shop/brew
--As a user, I want to have a shopping list that can add ingredients I do not have from the recipes to it so I don't forget anything at the store
--As a user, I would like to 'favorite' a recipe and have a favorites tab so I can come back to which beers I want to brew
+- As a user, I would like to shuffle through random recipes so I can get inspiration for what to brew
+- As a user, I would like to see animations when a button or recipe is clicked on so I know it's accepting my input
+- As a user, I would like drop down menus for the search items so I know what options I have
+- As a user, I would like to be able to open the recipe on my phone (and have it look great) so I can more easily access it while I shop/brew
+- As a user, I want to have a shopping list that can add ingredients I do not have from the recipes to it so I don't forget anything at the store
+- As a user, I would like to 'favorite' a recipe and have a favorites tab so I can come back to which beers I want to brew

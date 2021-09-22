@@ -2,37 +2,44 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom'
 
 
-function BeerDetails({ setId}) {
+function BeerDetails({ setId, shoppingList, setShoppingList, handleUpdate}) {
     const [beer, setBeer]= useState(null);
     const { id } = useParams();
     const history = useHistory();
-    
-    
+    const [error, setError] = useState(null);
 
     let url= `https://api.punkapi.com/v2/beers?ids=${id}`;
-    console.log(url)
+
     useEffect(()=>{
-        // setId(id);
-        
-        fetch(url)
+       fetch(url)
         .then(res=>res.json())
         .then(res=>
             {   setId(id);
                 setBeer(res[0])
                 
             })
-        .catch(err=>console.log(err))
-
-    },[url])
+        .catch(err=> {
+            const copy = String(err)
+            setError(copy)
+        })  
+        //eslint-disable-next-line
+    },[])
 
     function handleSubmit() {
-        // history.push("/random")
         history.goBack();
-    
+    }
+
+    function handleOnclick(item) {
+        handleUpdate(item);
     }
     
     if(!beer){
+        if (error){
+            
+            return <h2 className="brewingMessage">{error}</h2>;
+        }
         return <h2 className="brewingMessage">Brewing...</h2>;
+
     } else {
     
     let malt = beer.ingredients.malt;
@@ -54,29 +61,30 @@ function BeerDetails({ setId}) {
             <p className="beerDescription"><em>{beer.description}</em></p>
             <h4 className="recipeTitle">Recipe</h4>
             <h5 className="ing"><em>Ingredients</em></h5>
+            <p className="addToList"><em>Click on an ingredient to add to shopping list</em></p>
             <div className="ingredients">
                 <p><strong>Malt</strong></p>
                 <ul> 
                     {malt.map((malt)=> 
-                    <li>{malt.amount.value} {malt.amount.unit} {malt.name}</li>
+                    <li><button className="addButton" key={`${malt.amount.value} ${malt.amount.unit} ${malt.name}`} onClick={()=>handleOnclick(`${malt.amount.value} ${malt.amount.unit} ${malt.name}`)}>{malt.amount.value} {malt.amount.unit} {malt.name}</button></li>
                     )}              
                 </ul>
                 <p><strong>Hops</strong></p>
                 <ul> 
                     {hops.map((hops)=> 
-                    <li>{hops.amount.value} {hops.amount.unit} {hops.name} to be added at {hops.add} to add {hops.attribute}</li>
+                    <li><button key={`${hops.amount.value}-${hops.name}`} className="addButton" onClick={()=>handleOnclick(`${hops.amount.value} ${hops.amount.unit} ${hops.name} `)}>{hops.amount.value} {hops.amount.unit} {hops.name} to be added at {hops.add} to add {hops.attribute}</button></li>
                     )}              
                 </ul>
                 <p><strong>Yeast</strong></p>
                 <ul>
-                    <li>{yeast}</li>
+                    <li><button className="addButton" onClick={()=>handleOnclick(`${yeast}`)}>{yeast}</button></li>
                 </ul>
             </div>
             <h5><em>Directions</em></h5>
             <ul>
                 <li>Boil Volume: {boil.value} {boil.unit}</li>
                 {mash.map((mash)=>
-                <li>Mash at {mash.temp.value} {mash.temp.unit} for {mash.duration} minutes</li>
+                <li key={`${mash.temp.value} ${mash.temp.unit}`}>Mash at {mash.temp.value} {mash.temp.unit} for {mash.duration} minutes</li>
                 )}
                 <li>Ferment at {fermentation.temp.value} {fermentation.temp.unit}</li>
             </ul>
@@ -84,8 +92,8 @@ function BeerDetails({ setId}) {
                 <p>{beer.brewers_tips}</p>
             <h5><em>Food Pairing</em></h5>
             <ul>
-                {foodPairing.map((food)=>
-                <li>{food}</li>
+                {foodPairing.map((food, index)=>
+                <li key={`${food} - ${index}`}>{food}</li>
                 )}
             </ul>
 

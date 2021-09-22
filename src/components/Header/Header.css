@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 .App-header {
-	background-color: rgba(215, 185, 127, 0.6);
+	background-color: rgba(215, 185, 127, 0.75);
 	border-bottom: 10px solid rgba(215, 185, 127, 0.8);
 	display: grid;
-	grid-template-columns: 5fr 1fr 1fr;
+	grid-template-columns: 5fr 1fr 1fr 1fr;
 	grid-template-rows: 100%;
 	align-items: flex-end;
 	/* position: absolute; */
@@ -42,7 +43,7 @@ body {
 	text-align: right;
 	color: rgb(160, 82, 45);
 	margin-right: 20px;
-	font-family: 'Advent Pro', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .randomNav {
 	grid-column: 3 / span 1;
@@ -50,9 +51,17 @@ body {
 	text-align: right;
 	color: rgb(160, 82, 45);
 	margin-right: 20px;
-	font-family: 'Advent Pro', sans-serif;
+	font-family: 'Quicksand', sans-serif;
  
 }
+.shoppingList {
+	grid-column: 4 / span 1;
+	grid-row: 1 / span 1;
+	text-align: right;
+	color: rgb(160, 82, 45);
+	margin-right: 20px;
+	font-family: 'Quicksand', sans-serif;
+}	
 a {
 	text-decoration: none;
 }
@@ -67,6 +76,23 @@ a:hover {
 	padding: 10px;
 	background-color: rgba(215, 185, 127, 0.7);
 	text-align: center;
+}
+
+.shoppingL {
+	width: 40vw;
+	text-align: left;
+	padding: 30px;
+	line-height: 200%;
+}
+.brewingMessage{
+	border: 5px solid rgb(128, 128, 0);
+	margin: 50px auto;
+	padding: 10px;
+	background-color: rgba(215, 185, 127, 0.7);
+	width: 40vw;
+	text-align: center;
+	padding: 30px;
+	line-height: 200%;
 }
 .welcome {
 	font-size: 42px;

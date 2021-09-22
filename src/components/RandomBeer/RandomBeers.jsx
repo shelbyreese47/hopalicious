@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function RandomBeers({id, setId}) {
     const [click, setClick] = useState([]);
     const [random, setRandom]= useState([]);
+    const [error, setError] = useState(null);
     
     let url='https://api.punkapi.com/v2/beers/random'
 
@@ -15,15 +16,23 @@ function RandomBeers({id, setId}) {
                 setRandom(res[0])
                 setId(res[0].id)
             })
-            .catch(err=>console.log(err))
+            .catch(err=> {
+            const copy = String(err)
+            setError(copy)
+        })  
 
-
+        //eslint-disable-next-line
     }, [click])
 
     function handleClick(event) {
         setClick([...click,'']);
     }
+
+    if (error){
  
+            return <h2 className="brewingMessage">{error}</h2>;
+        }
+
     return (
         <div className="randomBeer">
             <div >

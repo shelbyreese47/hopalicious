@@ -7,6 +7,7 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
     
     const [beers, setBeers]= useState([]);
     const history = useHistory();
+    const [error, setError] = useState(null);
 
 
     let beerName=name ? `&beer_name=${name}` : ""
@@ -26,15 +27,21 @@ function Beers({name,ibu,abv,yeast,hops,malt}) {
             .then(res=> {
                 setBeers(res)                
             })
-            .catch(err=>console.log(err))
-
-
+            .catch(err=> {
+            const copy = String(err)
+            setError(copy)
+        })  
+        //eslint-disable-next-line
     }, [url])
-    console.log(url);
+   
     function handleClick(event) {
         history.push("/search")
     }
 
+    if (error){
+            
+            return <h2 className="brewingMessage">{error}</h2>;
+        }
     return (
         <div className="searchResultsContainer">
             <h2>Search Results for:</h2>
