@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# hopalicious
+Are you a home brewer? Do you have trouble coming up with new recipes or scouring the internet for new recipes? This app is for you! You can either get a random recipe, or search for a beer to brew based on different beer attributes. Try it out!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link to the API you plan to use
+> API link
+https://api.punkapi.com/v2/beers 
 
-## Available Scripts
+## Technologies Used
+- JavaScript
+- React
+- imgur.com
 
-In the project directory, you can run:
+## Installation instructions
+- fork and clone the repo
+- cd into the repo
+- Open the entire folder in VScode
+- Open the index.html file in your browser
+- Start playing!
 
-### `npm start`
+## Contribution Guidelines
+**How to contribute**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**How to identify bugs**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**How to propose improvements**
 
-### `npm test`
+## Wire Frames
+> Copy and paste or drag and drop your images here.
+![Brewtique Wireframe 1](https://media.git.generalassemb.ly/user/37826/files/b8ce3700-165b-11ec-877e-ffc23d13f5fc)
+![Wireframe 2](https://media.git.generalassemb.ly/user/37826/files/bb309100-165b-11ec-80da-248fa261dc6f)
+![Wireframe 3](https://media.git.generalassemb.ly/user/37826/files/bc61be00-165b-11ec-8e55-9be34db2c74e)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## User Stories
+### MVP Goals
+- As a user, I want to be able to see a random beer recipe if I don't know what I want to search for
+- As a user, I want to be able to search for the different components of the beer I would like to brew so I can brew according to what I have on hand/what I'm going for (type of yeast, hops, IBUs etc)
+- As a user, I want to easily navigate through the website so that I don't get confused about where to go
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Stretch Goals
+- As a user, I would like to shuffle through random recipes so I can get inspiration for what to brew
+- As a user, I would like to see animations when a button or recipe is clicked on so I know it's accepting my input
+- As a user, I would like drop down menus for the search items so I know what options I have
+- As a user, I would like to be able to open the recipe on my phone (and have it look great) so I can more easily access it while I shop/brew
+- As a user, I want to have a shopping list that can add ingredients I do not have from the recipes to it so I don't forget anything at the store
+- As a user, I would like to 'favorite' a recipe and have a favorites tab so I can come back to which beers I want to brew

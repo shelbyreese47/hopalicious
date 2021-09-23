@@ -1,0 +1,164 @@
+.searchResultsContainer {
+	overflow-y:scroll;
+	height: 90vh;
+	/* border: 2px solid red; */
+}
+.searchItems {
+	border-bottom: 5px ridge rgba(128, 128, 0,0.5);
+	display: flex;
+	list-style: none;
+	flex-direction: row;
+	padding: 0px 20px;
+	margin: 10px;
+}
+.searchItem {
+	margin: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	
+}
+
+.searchResultsContainer::-webkit-scrollbar {
+	width: 5px;
+}
+/* Track */
+.searchResultsContainer::-webkit-scrollbar-track {
+  background: rgb(128, 128, 0.6); 
+}
+ 
+/* Handle */
+.searchResultsContainer::-webkit-scrollbar-thumb {
+  background: rgba(215, 185, 127, 0.7); 
+}
+
+/* Handle on hover */
+.searchResultsContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(215, 185, 127, 0.7); 
+}
+.searchForm {
+  	align-items: center;
+    justify-content: center;
+	width: 60vw;
+	border: 5px solid rgb(128, 128, 0);
+	margin: 50px auto;
+	padding: 20px 20px;
+	background-color: rgba(215, 185, 127, 0.85);
+}
+.searchFields {
+  	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: auto;
+    gap: 10px;
+    text-align: right;
+    font-size: 20px;
+}
+.c11 {
+	grid-column: 1;
+	grid-row: 1;
+}
+.c21 {
+	grid-column: 2;
+	grid-row: 1;
+}
+.c12 {
+	grid-column: 1;
+	grid-row: 2;
+}
+.c22 {
+	grid-column: 2;
+	grid-row: 2;
+}
+.c13 {
+	grid-column: 1;
+	grid-row: 3;
+}
+.c23 {
+	grid-column: 2;
+	grid-row: 3;
+}
+.c14 {
+	grid-column: 1;
+	grid-row: 4;
+}
+.c24 {
+	grid-column: 2;
+	grid-row: 4;
+}
+.c15 {
+	grid-column: 1;
+	grid-row: 5;
+}
+.c25 {
+	grid-column: 2;
+	grid-row: 5;
+}
+.c16 {
+	grid-column: 1;
+	grid-row: 6;
+}
+.c26 {
+	grid-column: 2;
+	grid-row: 6;
+}
+.searchButton {
+    padding: 5px 20px;
+    margin: 10px 5px 10px auto;
+	display: block;
+	background-color: rgb(128, 128, 0);
+	margin-bottom: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border: 2px solid rgba(215, 185, 127, 1);
+}
+.hoverMess{
+	position: inline;
+
+}
+.hoverMessage {
+	display: none;
+  position: absolute;
+  width: 350px;
+  font-size:14px;
+  background-color: #fff;
+  border:2px solid rgb(128, 128, 0);
+  text-align: left;
+  line-height: 200%;
+  padding-left: 15px;
+
+}
+.hoverTitle {
+	border-bottom: 3px solid rgb(128, 128, 0);
+	font-size: 16px;
+}
+ul {
+	margin-left: 0px;
+	padding-left: 0px;
+	padding-right: 15px;
+
+	
+} 
+.ibuInfo {
+	list-style-type:none;
+	border-bottom: 1px solid rgba(128, 128, 0, .3)
+
+}
+.hoverMess:hover .hoverMessage {
+	display:block;
+}
+.infoButton {
+	border-radius: 50%;
+	font-size: 12px;
+	padding:1px 3px;
+	background-color: darkgrey;
+	border: none;
+	color: white;
+	margin-left: 10px;
+
+
+}
+
+@media (min-width:700px) {
+	.searchForm {
+	width: 500px;
+}
+}

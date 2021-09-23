@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+.App-header {
+	background-color: rgba(215, 185, 127, 0.75);
+	border-bottom: 10px solid rgba(215, 185, 127, 0.8);
+	display: grid;
+	grid-template-columns: 5fr 1fr 1fr 1fr;
+	grid-template-rows: 100%;
+	align-items: flex-end;
+	/* position: absolute; */
+	position: sticky;
+	top: 0;
+}
+.App {
+	height: 100vh;
+}
+body {
+	background-image: url('https://i.imgur.com/yrJxm7O.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	/* font-family: 'Advent Pro', sans-serif; */
+}
+.logoImg {
+	width: 150px;
+}
+.logo {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 1;
+	display: flex;
+}
+.business {
+	margin-top: 40px;
+	color: rgb(128, 128, 0);
+    /* font-family: 'Cabin Sketch', cursive; */
+    font-family: 'Special Elite', cursive;
+}
+.search {
+	grid-column: 2 / span 1;
+	grid-row: 1 / span 1;
+	text-align: right;
+	color: rgb(160, 82, 45);
+	margin-right: 20px;
+	font-family: 'Quicksand', sans-serif;
+}
+.randomNav {
+	grid-column: 3 / span 1;
+	grid-row: 1 / span 1;
+	text-align: right;
+	color: rgb(160, 82, 45);
+	margin-right: 20px;
+	font-family: 'Quicksand', sans-serif;
+ 
+}
+.shoppingList {
+	grid-column: 4 / span 1;
+	grid-row: 1 / span 1;
+	text-align: right;
+	color: rgb(160, 82, 45);
+	margin-right: 20px;
+	font-family: 'Quicksand', sans-serif;
+}	
+a {
+	text-decoration: none;
+}
+a:hover {
+	cursor: pointer;
+}
+
+.home {
+	width: 700px;
+	border: 5px solid rgb(128, 128, 0);
+	margin: 50px auto;
+	padding: 10px;
+	background-color: rgba(215, 185, 127, 0.7);
+	text-align: center;
+}
+
+.shoppingL {
+	width: 40vw;
+	text-align: left;
+	padding: 30px;
+	line-height: 200%;
+}
+.brewingMessage{
+	border: 5px solid rgb(128, 128, 0);
+	margin: 50px auto;
+	padding: 10px;
+	background-color: rgba(215, 185, 127, 0.7);
+	width: 40vw;
+	text-align: center;
+	padding: 30px;
+	line-height: 200%;
+}
+.welcome {
+	font-size: 42px;
+	margin-bottom: 10px;
+}
+.welcomeMessage {
+	font-size: 32px;
+	margin-top: 0px;
+}
+.hops {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+.hopsImg {
+	width: 100px;
+	/* height: 50px; */
+}
+
+.recipeButton,
+.randomButton {
+	background-color: rgb(128, 128, 0);
+	padding: 10px 20px;
+	border: none;
+	margin-bottom: 30px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.randomButton:hover,
+.recipeButton:hover {
+	opacity: 0.75;
+}
+.randomButton {
+	margin-left: 10px;
+}
+
+
+
+
+@media (max-width: 700px) {
+	.home {
+		width: 80vw;
+	}
+}
+
+h2 {
+	font-family: 'Advent Pro', sans-serif;
+	font-size: 60px;
+	font-weight:900;
+}
